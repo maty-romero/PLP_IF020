@@ -1,0 +1,11 @@
+; e) Pregunte por un número y en caso de ingresar otro cosa, siga preguntando 
+; hasta que el valor ingresado sea un número
+
+(define (es_string valor)
+  (string? valor)
+)
+
+
+(define (ingreso_valor)
+  
+)

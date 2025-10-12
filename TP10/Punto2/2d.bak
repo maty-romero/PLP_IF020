@@ -1,0 +1,6 @@
+; d) Pregunte por su nombre y le conteste Hola nombre!.
+
+(display "Ingrese su nombre: ")
+(define nombre (read))
+(newline)
+(display "Hola" nombre "!")
