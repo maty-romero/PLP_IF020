@@ -1,0 +1,13 @@
+; 3 c) un entero n y produzca una lista con los números desde 1 a n en orden ascendente.
+
+(require (lib "trace.ss")) ; Import de la libreria 
+
+(define (get_lista num)
+  (cond
+    ((= num 1) '(1) )
+    (cons(lista_asc (- num 1)))
+  )
+)
+
+(trace get_lista)
+(get_lista 3)
