@@ -1,5 +1,10 @@
 (require (lib "trace.ss"))
 (require(lib "compat.ss"))
+;ENUNCIADO
+;) un átomo y una lista e informe con verdadero o falso si el átomo está incluido en la lista,
+;llame a esta función mem?
+;---------------------------------------------------------------------------
+
 
 (define (pedirAtomo)
   (display "Ingrese un átomo: ")

@@ -1,5 +1,10 @@
 (require (lib "trace.ss"))
 
+; ENUNCIADO
+; un entero n y produzca una lista con los números desde 1 a n en orden descendente
+; ---------------------------------------------------------------------------------
+
+
 (define (pedirNumero)
   (display "Ingrese un numero: ")
   (let ((x (read)))
@@ -12,7 +17,7 @@
 (define (generarListaInversa inicio fin)
   (if (< fin inicio)
       '()  
-      (cons fin (generarListaInversa inicio (- fin 1))))) 
+      (cons fin (generarListaInversa inicio (- fin 1))))) ; similar al punto c pero descuenta en vez de incrementar los elementos de la lista hasta llegar al valor ingresado
 
 (define (crearLista)
   (let ((x (pedirNumero)))
