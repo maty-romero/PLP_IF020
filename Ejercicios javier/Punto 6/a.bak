@@ -1,0 +1,28 @@
+(require (lib "trace.ss"))
+(require (lib "compat.ss"))
+; Tira un error al usar read al ingresarla con quote
+(define (pedirLista)
+  (display "Ingrese una lista: ")
+  (let ((x (read)))
+    (if (list? x)
+        x
+        (begin
+          (display "No es una lista, vuelva a intentarlo.\n")
+          (pedirLista)))))
+
+(define (sumaList lst)
+  (cond
+    ((null? lst) 0)  ; si la lista está vacía, suma = 0
+    ((list? (car lst))  ; si el primer elemento es una lista
+     (+ (sumaList (car lst)) (sumaList (cdr lst))))
+    (else  ; si es un número, lo suma al resto
+     (+ (car lst) (sumaList (cdr lst))))))
+
+(define (sumarTodo)
+  (let ((lista (pedirLista)))
+    (display "La suma es: ")
+    (display (sumaList lista))
+    (newline)))
+
+(trace sumaList)
+(sumarTodo)
