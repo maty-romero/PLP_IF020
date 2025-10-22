@@ -37,22 +37,20 @@ capitales y la distancia en kilometros entre ellas.
 ;(caddr BA) ; -57.95
 
 
-#| 
-
 ; constantes para el calculo
 (define PI 3.141592653589793) ; varios digitos para resultados mas precisos 
 (define R 6371)  ; radio aprox de la tierra en km 
 
 ; funcion: conversion grados a radianes 
-(define (deg->rad deg)
-  (* deg (/ PI 180)))
+(define (grad->rad grad)
+  (* grad (/ PI 180)))
 
-; funcion: calculo distancia entre 2 puntos P(latitud, longitud)
-(define (distancia lat1 lon1 lat2 lon2)
-  (let* ((lat1r (deg->rad lat1))
-         (lon1r (deg->rad lon1))
-         (lat2r (deg->rad lat2))
-         (lon2r (deg->rad lon2))
+; funcion: calculo distancia entre 2 puntos P(latitud, longitud) - Formula de Harvesine
+(define (calc_distancia lat1 lon1 lat2 lon2)
+  (let* ((lat1r (grad->rad lat1))
+         (lon1r (grad->rad lon1))
+         (lat2r (grad->rad lat2))
+         (lon2r (grad->rad lon2))
          (dlat (- lat2r lat1r))
          (dlon (- lon2r lon1r))
          (a (+ (expt (sin (/ dlat 2)) 2)
@@ -60,11 +58,30 @@ capitales y la distancia en kilometros entre ellas.
                   (cos lat2r)
                   (expt (sin (/ dlon 2)) 2))))
          (c (* 2 (asin (sqrt a)))))
-    (* R c)))
+    (* R c))
+)
 
-|#
+
+; *** Funcion Distancia   
+; 2 parametros (abrev. provincias), return: nombre capitales y distancia km entre ellas
+(define (distancia prov1 prov2) 
+  (display (string-append "Provincia 1 | Capital: " (car prov1)))
+  (newline)
+  (display (string-append "Provincia 2 | Capital: " (car prov2)))
+  (newline)
+  (display (string-append "Distancia entre capitales: "
+                          (number->string 
+                            (calc_distancia 
+                              (cadr prov1) (caddr prov1) 
+                              (cadr prov2) (caddr prov2)) 
+           ) " km" )
+  )
+  (newline)
+)
+
 
 ; ******* 'MAIN' o Programa ppal *******
-; (distancia -34.6037 -58.3816 40.7128 -74.0060)  ; Ejemplo uso: Buenos Aires a Nueva York (km)
-
-
+; (calc_distancia -34.6037 -58.3816 40.7128 -74.0060)  ; Ejemplo uso: Buenos Aires a Nueva York (km)
+(distancia BA CAT) 
+(newline)
+(distancia CHB JUJ)

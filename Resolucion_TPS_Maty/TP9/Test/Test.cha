@@ -1,0 +1,9 @@
+<?xml version="1.0"?><st-source><do-it>'----SNAPSHOT----'</do-it><do-it>"#('c:\Users\Hans\Documents\Github\Universidad\PLP_IF020\Resolucion_TPS_Maty\TP9\Test\Test.im' 'October 21, 2025' '1:36:36 pm')""An image file c:\Users\Hans\Documents\Github\Universidad\PLP_IF020\Resolucion_TPS_Maty\TP9\Test\Test.im was created at 13:36:36 on mar 21 /21/e octubre de 2025."</do-it><do-it>Transcript cr</do-it><do-it>Transcript show: 'hola'.</do-it><do-it>Transcript show: 'hola'.</do-it><do-it>Transcript cr</do-it><do-it>Transcript cr</do-it><do-it>Dialog warn: '¡Hola desde Smalltalk!'.</do-it><do-it>nombre := Dialog request: '¿Cuál es tu nombre?'.</do-it><do-it>count := 0.</do-it><do-it>count := 0.</do-it><do-it>count := 0.</do-it><do-it>count := 0.</do-it><do-it>| sum |	Transcript show: sum printString; cr.</do-it><do-it>| count sum |
+count := 0.
+sum := 0.
+
+[ count &lt; 100 ] whileTrue: [
+    sum := sum + (2 * count - 1).
+    count := count + 1.
+].
+Transcript show: sum printString; cr. </do-it><do-it>a := (Dialog request: 'Ingrese el primer número:') asNumber</do-it><do-it>| a b suma |</do-it><do-it>a := (Dialog request: 'Ingrese el primer número:') asNumber.</do-it><do-it>a := (Dialog request: 'Ingrese el primer número:') asNumber.</do-it><do-it>a := (Dialog request: 'Ingrese el primer número:') asNumber.</do-it><do-it>(1 &gt; 2) ifTrue: [ Transcript show: 'Es menor'; cr ].</do-it><do-it>(1 &gt; 2) ifTrue: [ Transcript show: 'Es menor'; cr ].</do-it><do-it>MyTranscript show: 'Go Smalltalk!'</do-it><do-it>MyTranscript show: 'Go Smalltalk!'</do-it><do-it>MyTranscript show: 'Go Smalltalk!'</do-it><do-it>MyTranscript show: 'Go Smalltalk!'</do-it>
