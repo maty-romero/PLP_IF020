@@ -1,0 +1,18 @@
+#| 
+Funcion que: 
+h) Combinatorio: recibe como parámetros a dos números enteros positivos m y n y devuelve el número combinatorio (m,n).
+|#
+
+; fun factorial
+; num num combinario - restricciones  
+; m y n E Naturales (>= 0 ; negativos no definidos) 
+; n <= m ; si n > m gneralmente coeficiente combinatorio = 0
+
+; -- funcion factorial
+(define (factorial num)
+  (if (<= n 1) 1
+      (* n (factorial (- n 1) )) 
+  )
+)
+
+(factorial 3)
