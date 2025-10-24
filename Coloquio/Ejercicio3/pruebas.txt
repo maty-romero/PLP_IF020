@@ -1,0 +1,9 @@
+% ---- Sentencias para probar consultas en interprete de PROLOG ----
+
+% 1. Informar los distintos modelos de avión (fabricante y modelo) que vuelan una ruta determinada.
+?- info_avion_por_ruta('Buenos Aires', 'Ushuaia', Fabricante, Modelo).
+?- info_avion_por_ruta('Cordoba', 'Salta', Fabricante, Modelo).
+
+?- vuelos_segun_avion_dia('LV-GOO', sa, Vuelo, Origen, Destino).
+?- vuelos_segun_avion_dia('LV-GOO', ma, Vuelo, Origen, Destino).
+?- vuelos_segun_avion_dia('LV-FUB', sa, Vuelo, Origen, Destino).
